@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card-title {
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
