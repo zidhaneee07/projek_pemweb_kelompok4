@@ -2,11 +2,11 @@ import React from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import Footer from '../components/Footer';
 
-function Contact() {
+function Contact({name}) {
   return (
     <>
       <Container className="my-5">
-        <h2 className="text-center mb-4">Hubungi Kami</h2>
+        <h2 className="text-center mb-4">{name}</h2>
         <Row>
           <Col md={6}>
             <Card className="p-4 shadow-sm">

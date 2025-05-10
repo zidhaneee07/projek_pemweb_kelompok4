@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import Footer from '../components/Footer';
+
 function Home() {
+  // State untuk galeri perhiasan
+  const [galleryItems] = useState([
+    {
+      title: 'Cincin Berlian',
+      image: '/images/a13.jpeg',
+    },
+    {
+      title: 'Kalung Emas',
+      image: '/images/a14.jpeg',
+    },
+    {
+      title: 'Gelang Mewah',
+      image: '/images/a15.jpeg',
+    },
+  ]);
+
   return (
     <div>
       {/* Hero Section */}
@@ -43,30 +60,16 @@ function Home() {
       <Container className="my-5">
         <h2 className="text-center mb-4" style={{ color: '#b2967d' }}>Galeri Perhiasan</h2>
         <Row>
-          <Col md={4}>
-            <Card className="mb-3">
-              <Card.Img variant="top" src="/images/a13.jpeg" />
-              <Card.Body>
-                <Card.Title>Cincin Berlian</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card className="mb-3">
-              <Card.Img variant="top" src="/images/a14.jpeg" />
-              <Card.Body>
-                <Card.Title>Kalung Emas</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card className="mb-3">
-              <Card.Img variant="top" src="/images/a15.jpeg" />
-              <Card.Body>
-                <Card.Title>Gelang Mewah</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
+          {galleryItems.map((item, index) => (
+            <Col md={4} key={index}>
+              <Card className="mb-3">
+                <Card.Img variant="top" src={item.image} />
+                <Card.Body>
+                  <Card.Title>{item.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Container>
 
